@@ -1,5 +1,7 @@
 # RethinkDB_PHP
-This is a Fork of tbolier / php-rethink-ql. I have fixed some of the key problems so it is workable.
+__This is a Fork of tbolier / php-rethink-ql. I have fixed some of the key problems so it is workable.__
+* the Registry is missing a criticle line of code in constructor which lead to non-population of the $connections property;
+* the example code has a mistake in parameter name which results in using fallback connection 'localhost'.
 # Original README.MD
     PHP-RETHINK-QL
     A PHP RethinkDB driver for the RethinkDB query language (ReQL).
@@ -44,7 +46,8 @@ use TBolier\RethinkQL\Connection\Registry;
 
 $connections = [
     'default_connection' => [
-        'host' => 'localhost',
+        // 'host' => 'localhost', // this is an incorrect parameter key
+        'hostname' => 'localhost',
         'port' => 28015,
         'default_db' => 'demoDB',
         'user' => 'demo',

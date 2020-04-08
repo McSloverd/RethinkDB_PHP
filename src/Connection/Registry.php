@@ -25,6 +25,14 @@ class Registry implements RegistryInterface
     {
         if ($connections) {
             foreach ($connections as $name => $options) {
+                /*  without the lower line, the constructor never worked
+                    The example instanciated Registry with array of arrays of connection
+                    details, but here because of array is not instanceof OptionsInterface
+                    so the loop never reached addConnection() which means the $connection
+                    property is never populated. Thus the method getConnection returns
+                    'not exist' when trying to get the value of $connection property
+                */
+                $options = new Options($option);
                 if (!$options instanceof OptionsInterface) {
                     continue;
                 }
