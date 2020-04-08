@@ -1,7 +1,10 @@
 # RethinkDB_PHP
-__This is a Fork of tbolier / php-rethink-ql. I have fixed some of the key problems so it is workable.__
+__This is a Fork of tbolier / php-rethink-ql. I have fixed some of the key problems so it is working.__
 * the Registry is missing a criticle line of code in constructor which lead to non-population of the $connections property;
 * the example code has a mistake in parameter name which results in using fallback connection 'localhost'.
+
+__If you are just looking for a working instance of the original PHP-RETHINK-QL, you can clone this repo and use it; I am only maintaining this repo for my personal use agreed and followed by the authors license policy (_Apache License 2.0_) but I am neither maintaining this project nor part of the original dev team member. If you have any questions or found any issue, you can open a request and I will try my best to help, but please considering open that request at the original repo, I am sure you will get more help there.__
+
 # Original README.MD
     PHP-RETHINK-QL
     A PHP RethinkDB driver for the RethinkDB query language (ReQL).
